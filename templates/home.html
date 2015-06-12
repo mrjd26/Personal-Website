@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<head>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63477445-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel="stylesheet" type="text/css" href="/static/my.css">
+
+<link rel="stylesheet" href="/static/jquery-ui/jquery-ui.min.css">
+<link rel="stylesheet" href="/static/jquery-ui/jquery-ui.structure.min.css">
+<link rel="stylesheet" href="/static/jquery-ui/jquery-ui.theme.min.css">
+
+<!-- Core CSS file -->
+<link rel="stylesheet" href="/static/photoswipe.css"> 
+
+<!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+     In the folder of skin CSS file there are also:
+     - .png and .svg icons sprite, 
+     - preloader.gif (for browsers that do not support CSS animations) -->
+<link rel="stylesheet" href="/static/default-skin/default-skin.css"> 
+
+
+<!-- Core JS file -->
+<script src="/static/photoswipe.min.js"></script> 
+
+<!-- UI JS file -->
+<script src="/static/photoswipe-ui-default.min.js"></script> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/static/jquery-ui/jquery-ui.min.js"></script>
+</head>
+
+<body onload="animate()">
+<div id="background">
+<div id="banner">
+ <h1><span id="portfolio">Mike Jarvis</span></h1>
+ <canvas id="myCanvas" height="150" width="700"></canvas>
+ <script>
+  var c = document.getElementById('myCanvas');
+  var ctx = c.getContext("2d");
+  ctx.fillStyle = "#003147";
+  ctx.font = '20pt Verdana';
+  ctx.fillText("Mike Jarvis's Portfolio",50,75);
+  ctx.beginPath();
+  ctx.arc(395,50,5,0,2*Math.PI);
+  ctx.stroke();
+  ctx.beginPath();  
+  ctx.arc(500,20,5,0,2*Math.PI);
+  ctx.stroke();
+ </script>
+<div id="logo_box"></div>
+</div>
+
+<div class="back_pane">
+ <div id="accordion">
+  <h3 id="myheading1">Timeline</h3>
+  <div id="main_container">
+   <div id="timeline_container">
+    <div id="timeline">
+     <p class="timeline"><span id="music" class="musc">Bachelor of Music Perfomance</span></p><span class="flag"></span>
+     <p class="timeline"><span id="env" class="desc">Bachelor of Environmental Science</span></p><span class="flag"></span>
+     <p class="timeline"><span id="chem" class="desc">Chemical Reactor Operator</span></p><span class="flag"></span>
+     <p class="timeline"><span id="ion" class="desc">Lithium Ion R&D</span></p><span class="flag"></span>
+     <p class="timeline"><span id="glass" class="desc">Lithium Ion Product Development</span></p><span class="flag"></span>
+     <p class="timeline"><span id="python" class="desc">Python Development</span></p><span class="flag"></span>
+    </div>
+   </div>
+   <div id="timeline_container_2">
+    <div id="years">
+     <p class="year">2007</p><br>
+     <p class="year">2009</p><br>
+     <p class="year">2010</p><br>
+     <p class="year">2012</p><br>
+     <p class="year">2013</p><br>
+     <p class="year">2014</p>
+    </div>
+   <div id="skill_box"></div>
+   </div>
+  </div>
+
+  <h3 id="myheading2">About</h3>
+  <div id="about_box">
+    <div id="about">
+     <p class="story firstL">Mike Jarvis has a passion and interest in science, technology, and engineering.  After graduating from the University of Missouri - Kansas City in 2009 with a Bachelor of Science in Environmental Science, Mike joined Harcros Chemicals as a chemical reactor operator, putting the lessons of chemistry to use, applying physical science to the economy of industrial chemical manufacture.</p>
+     <p class="story">  In 2012, Mike sought the technologically-inspired culture of Silicon Valley and joined Tesla Motors battery safety group in Palo Alto, California.  His Research and Development efforts supported the safety of the Model S. In 2013, Mike worked on assignment at Google, in a product development role at Google X, a'secret lab' devoted to moonshot projects.</p>
+     <p class="story">During this time, Mike became a self taught programmer, and applied his learning to enhance collection and analysis of hardware data.  His role morphed into a purely software development role on assigment at Google in 2014, providing visibility into Google's worldwide network infrastructure at its Mountain View, California campus headquarters.</p>
+<p class="story">Mike along with his wife, Beth and newborn daughter, Claire started 2015 in a new city, Austin, Texas where he continues to grow and learn on his technological journey.</p>
+    <!-- end about -->
+    </div>
+  <!-- end #about_box --> 
+ <div id="about-mobile"><ul><li id="city"><p></p></li><li id="prev"><p></p></li><li id="likes"><p></p></li><li id="software"><p></p></li></ul></div>
+ 
+ </div>
+  
+ <h3 id="myheading3">Experiences</h3>
+  <div id="exp_container">
+   <div class="caption_box">
+    <p class="exp_caption"><span class="work_year">2013-2014</span><br/><span class="work"> Li-Ion Product Development & Python Development</span></p>
+   </div>
+   <div class="caption_box">
+    <img id="Google" title="Google" class="sections" src="/static/thumbnails/IMG_0018_small.JPG"/>
+   </div>
+   <div class="caption_box bottom_mobile">
+    <p class="exp_caption"><span class="work_year">2012-2013</span><br/><span class="work"> Li-Ion Battery Safety R&D</span></p>
+   </div>
+   <div class="caption_box bottom_mobile">
+    <img id="Tesla" title="Tesla Motors" class="sections" src="/static/thumbnails/IMG_0812_small.JPG"/>
+   </div>
+  </div>
+ <h3 id="myheading4">Projects</h3>
+  <div id="projects">
+   <div class="proj_box caption_box">
+    <p class="proj_caption">Solar Tracker</p>
+   </div>
+   <div class="proj_box caption_box">
+    <img id="solar" title="Solar" class="sections"  src="/static/thumbnails/breadboard_small.jpg"/>
+   </div>
+   <div class="proj_box caption_box">
+    <p class="proj_caption">Restored '85 Honda</p>
+   </div>
+   <div class="proj_box caption_box">
+    <img id="motorcycle" title="Honda" class="sections" src="/static/thumbnails/moto1_small.JPG"/>
+   </div>
+   <div class="proj_box">
+    <p class="proj_caption">Automotive</p>
+   </div>
+   <div class="proj_box">
+    <img id="truck" title="Vehicle" class="sections" src="/static/thumbnails/truck1_small.jpg"/>
+   </div>
+  </div>
+ <h3 id="myheading5">Videos</h3>
+  <div id="youtube_box">
+   <div id="u">
+   <div class="youtube"><iframe width="250" height="140" src="https://www.youtube.com/embed/ufW90Gr_hnE?rel=0" frameborder="0" allowfullscreen></iframe></div>
+   <div class="youtube"><iframe width="250" height="140" src="https://www.youtube.com/embed/xOUp_s_BQmU?rel=0" frameborder="0" allowfullscreen></iframe></div>
+   <div class="youtube"><iframe width="250" height="140" src="https://www.youtube.com/embed/8ap6ENaWDF8?rel=0" frameborder="0" allowfullscreen></iframe></div> 
+   </div>
+  </div>
+ <h3 id="myheading6">Code to this site...</h3>
+
+
+<!-- codepen crap -->
+<div id="codepen_pen">
+<div data-height="409" data-theme-id="15167" data-slug-hash="PqzNMb" data-default-tab="js" data-user="mrjd26" class='codepen'><pre><code>$( document ) .ready(function(){
+
+//var openPhotoSwipe = function() {
+
+function openPhotoSwipe(target){
+
+var pswpElement = document.querySelectorAll(&#39;.pswp&#39;)[0];
+
+console.log(target.id);
+
+
+$.getJSON(&quot;/json_maker/&quot;, { target: target.id } )
+ .done(function( json ) {
+  console.log(json);
+  var items = json;
+
+
+// define options (if needed)
+var options = {
+    // optionName: &#39;option value&#39;
+    // for example:
+    index: 0 // start at first slide
+};
+
+// Initializes and opens PhotoSwipe
+var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+gallery.init();
+
+ });
+};
+
+$(&#39;#solar&#39;).click(function() { openPhotoSwipe(this)});
+$(&#39;#motorcycle&#39;).click(function() {openPhotoSwipe(this)});
+$(&#39;#truck&#39;).click(function() {openPhotoSwipe(this)});
+$(&#39;#Google&#39;).click(function() {openPhotoSwipe(this)});
+$(&#39;#Tesla&#39;).click(function() {openPhotoSwipe(this)});
+// end document.ready
+});
+</code></pre>
+<p>See the Pen <a href='http://codepen.io/mrjd26/pen/PqzNMb/'>PqzNMb</a> by mike (<a href='http://codepen.io/mrjd26'>@mrjd26</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+</div><script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</div>
+
+<!-- end accordion -->
+</div>
+
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+           ation. <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+      tion.          <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!--end pane -->
+</div>
+<div class="back_pane" id="footer">
+ <div id="social">
+  <a href="https://www.linkedin.com/in/jarvisengineer"><div id="in" class="sprite"></div></a>
+  <a href="https://github.com/mrjd26"><div id="git"class="sprite"></div></a>
+  <a href="https://facebook.com/mike.jarvis.560"><div id="fb" class="sprite"></div></a>
+ 
+  <div id="resume">Resume</div>
+ </div>
+
+<!-- end pane -->
+</div>
+<!-- background -->
+</div>
+
+   <div id="popup">
+    <div id="buttons">
+     <div id="save">
+      <a href="https://docs.google.com/document/u/0/d/1Y-xCG3tn828p3V8cycUK_HrG92y6Y2PVD6KJQPUjn2E/export?format=docx"><span>Save</span><img height="20px" width="20px" src="/static/vintage11.png"/></a></div>
+     <div id="close"><span>Close(X)</span></div>
+    </div>
+    <iframe id="doc" src="https://docs.google.com/document/d/1Y-xCG3tn828p3V8cycUK_HrG92y6Y2PVD6KJQPUjn2E/pub?embedded=true"></iframe> </div>
+</body>
+
+
+<script src="/static/image.js"></script>
+</html>

@@ -1,0 +1,119 @@
+#main_container{
+ width:100%;
+ height:250px;
+}
+#timeline_container{
+width:50%;
+height:250px;
+display:inline-block;
+float:left;
+}
+#timeline_container_2{
+width:50%;
+height:250px;
+display:inline-block;
+}
+#timeline{
+ text-align:right; 
+}
+.timeline::before{
+ 
+}
+.timeline::after{
+ background-color:black;
+ width:15px;
+ position:absolute;
+ content: " ";
+ height:15px;
+ margin-left:5px;
+ margin-top:0px;
+ margin-bottom:-10px;
+ border-radius:50%; 
+}
+.flag::after{
+ position:absolute;
+ content: " ";
+ background-color:black;
+ height:50px;
+ width:5px;
+ margin-top:-50px;
+ margin-bottom:-10px;
+ margin-left:9px;
+}
+.year{
+ margin-left:30px;
+}
+
+.sections:hover {
+  opacity:1;
+  border: 2px solid yellow;
+}
+.sections {
+ opacity:0.85;
+ border: 2px solid white;
+ max-width:150px;
+}
+
+body {
+ background-image: url("/static/idle2.png");
+ background-size:cover;
+}
+h1 {
+ display: inline-block;
+ margin-top:5%;
+ margin-left:10%;
+ box-shadow: 10px 10px 5px #888888;
+}
+#portfolio {
+ color: #003147;
+ text-shadow: 5px 5px 5px #888888;
+ position:absolute;
+}
+#back_pane {
+ width:1000px;
+ display:block;
+ margin-left:auto;
+ margin-right:auto;
+ background-color:rgb(0,3,6);
+ background-color:rgba(0,0,0,0.5);
+}
+#accordion {
+ width: 800px;
+ display:block;
+ margin-left:auto;
+ margin-right:auto;
+}
+.caption_box {
+ width: 150px;
+ display: inline-block;
+ text-align:center;
+}
+.exp_caption {
+ display:inline;
+}
+#codepen_pen {
+ width: 800px;
+ display:block;
+ margin-left:auto;
+ margin-right:auto;
+ margin-top:100px;
+}
+#banner {
+ border: 2px solid black;
+ height:150px;
+ width:1000px;
+ margin-left:auto;
+ margin-right:auto;
+ background-image:url("/static/flowers.jpg");
+ background-size:cover;
+}
+#in {
+width: 34px;
+height:33px;
+background: url(sociocons.png) 0 0;
+}
+#git {
+width: 34px;
+height: 33px;
+background: url(sociocons.png) 34px -102px;
+}

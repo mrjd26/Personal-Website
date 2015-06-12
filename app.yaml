@@ -1,0 +1,31 @@
+application: jarvis-mike
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /static
+  static_dir: image/static
+  secure: always  
+  application_readable: true
+
+- url: /.*
+  script: image.wsgi.application
+  secure: always
+
+libraries:
+- name: MySQLdb
+  version: latest
+
+- name: django
+  version: "1.5"
+
+- name: ssl
+  version: latest
+
+- name: PIL
+  version: latest
+
+builtins:
+- django_wsgi: on
