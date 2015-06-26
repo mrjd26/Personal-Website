@@ -1,99 +1,15 @@
-//globals declarations
-var ltx = 390;
-var lty = 50;
-var mtx = 390;
-var mty = 50;
-var c = document.getElementById('myCanvas');
-var ctx = c.getContext("2d");
-
-// draws the Html5 Canvas lines
-function draw(x_start, y_start, x_end, y_end, x_change, y_change) {
-  ctx.moveTo(x_start,y_start);
-  ctx.lineTo(x_end,y_end);
-  ctx.stroke();
-  ltx = x_end + x_change;
-  lty = y_end + y_change;
-}
-
-//handles the logic for the angled line(s)
-var check = function(){
- if(lty < 100){
-  ctx.beginPath();
-  x_change = -4;
-  y_change = 4;
-  draw(mtx,mty,ltx,lty,x_change,y_change);
-  setTimeout(check,1);
-  ctx.closePath();
- } else {
-  console.log('end check 1');
- }
-}
-
-//handles the logic for the straight line
-var check2 = function(){
-  if (lty >= 100 && ltx > 0) {
-   ctx.beginPath();
-   x_change = -8;
-   y_change = 0;
-   draw(mtx,mty,ltx,lty,x_change,y_change);
-   setTimeout(check2,1);
-   ctx.closePath();
-  } else {
-   console.log('done');
-  }
-}
-
-// the animation of all 3 lines being drawn on the canvas
-function animate(){
-  check();
-  setTimeout(function(){
-  mtx = 495;
-  mty = 25;
-  ltx = 495;
-  lty = 25;
-  }, 700);
-  setTimeout(check,700);
-  setTimeout(function(){
-  mtx = 423;
-  mty = 100;
-  ltx = 423;
-  lty = 100;
-  }, 1500);
-  setTimeout(check2,1500);
-}
-
-function clearCanvas(){
- // top left, width x height of canvas
- ctx.clearRect(0,0,700,150);
-}
-function reDraw(){
-  ctx.fillStyle = "#003147";
-  ctx.font = "20pt Verdana";
-  ctx.fillText("Mike Jarvis's Portfolio",50,75);
-  ctx.beginPath();
-  ctx.arc(395,50,5,0,2*Math.PI);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.arc(500,20,5,0,2*Math.PI);
-  ctx.stroke();
-}
-
-  /***********************
-   start jquery doc ready
-  ***********************/
 $( document ) .ready(function(){
-
- $("#myCanvas").click(function() {
-  ltx = 390;
-  lty = 50;
-  mtx = 390;
-  mty = 50;
-
-  clearCanvas();
-  reDraw();
-  setTimeout(animate,500);
- });
-
+ var firstView = true;
+ setTimeout(function(){firstView=false;},5000);
+  $("#banner").hover(
+   function() {
+    if (!firstView) {
+     $(this).css({'background-color':'yellow'});
+    };
+   }, function() {
+    $(this).css({'background-color':'white'});
+    }
+  );
  /* skills box */
  $(".desc").mouseenter(function(){
   var e = this.id;
@@ -151,7 +67,6 @@ $("#accordion").accordion({
  /********** my picture grabber ******************/
  $.getJSON("/json_maker/", { target: target.id } )
   .done(function( json ) {
-   console.log(json);
    var items = json;
 
    // define options (if needed)
@@ -199,9 +114,7 @@ $("#accordion").accordion({
  });
  
  $('#background, #close').click(function(){
-  console.log("background was clicked",is_open);
   if (is_open && ($('#popup').css('display') != 'none')) {
-   console.log("this condition executing");
    $('#popup').css({'display':'none'});
    is_open = false;
   } 

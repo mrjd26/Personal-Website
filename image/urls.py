@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'image.views.home', name='home'),
     url(r'^json_maker/', 'image.views.json_maker', name='json'),
+    url(r'^math/', 'image.views.math', name='math'),
 )

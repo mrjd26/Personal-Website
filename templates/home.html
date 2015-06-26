@@ -12,7 +12,7 @@
 
 </script>
 <link rel="stylesheet" type="text/css" href="/static/my.css">
-
+<link rel="stylesheet" type="text/css" href="/static/extends.css">
 <link rel="stylesheet" href="/static/jquery-ui/jquery-ui.min.css">
 <link rel="stylesheet" href="/static/jquery-ui/jquery-ui.structure.min.css">
 <link rel="stylesheet" href="/static/jquery-ui/jquery-ui.theme.min.css">
@@ -37,28 +37,14 @@
 <script src="/static/jquery-ui/jquery-ui.min.js"></script>
 </head>
 
-<body onload="animate()">
+<body>
 <div id="background">
-<div id="banner">
- <h1><span id="portfolio">Mike Jarvis</span></h1>
- <canvas id="myCanvas" height="150" width="700"></canvas>
- <script>
-  var c = document.getElementById('myCanvas');
-  var ctx = c.getContext("2d");
-  ctx.fillStyle = "#003147";
-  ctx.font = '20pt Verdana';
-  ctx.fillText("Mike Jarvis's Portfolio",50,75);
-  ctx.beginPath();
-  ctx.arc(395,50,5,0,2*Math.PI);
-  ctx.stroke();
-  ctx.beginPath();  
-  ctx.arc(500,20,5,0,2*Math.PI);
-  ctx.stroke();
- </script>
-<div id="logo_box"></div>
-</div>
+<a href="/"><div id="banner">
+ <canvas id="myCanvas" height="150" width="1000"></canvas>
+</div></a>
 
 <div class="back_pane">
+ {% block jquery_accordion %}
  <div id="accordion">
   <h3 id="myheading1">Timeline</h3>
   <div id="main_container">
@@ -262,17 +248,37 @@ $(&#39;#Tesla&#39;).click(function() {openPhotoSwipe(this)});
 </div>
 <!--end pane -->
 </div>
-<div class="back_pane" id="footer">
- <div id="social">
-  <a href="https://www.linkedin.com/in/jarvisengineer"><div id="in" class="sprite"></div></a>
-  <a href="https://github.com/mrjd26"><div id="git"class="sprite"></div></a>
-  <a href="https://facebook.com/mike.jarvis.560"><div id="fb" class="sprite"></div></a>
- 
-  <div id="resume">Resume</div>
+{% endblock %}
+ <div class="back_pane" id="footer">
+   <div id='links-container'>
+    <a href="https://www.linkedin.com/in/jarvisengineer"><div id="in" class="sprite"></div></a>
+    <a href="https://github.com/mrjd26"><div id="git"class="sprite"></div></a>
+    <a href="https://facebook.com/mike.jarvis.560"><div id="fb" class="sprite"></div></a>
+   </div>
+   <div id="resume-container">
+    <div id="resume">Resume</div>
+   </div>
  </div>
-
-<!-- end pane -->
-</div>
+<!-- recent posts... generated from python dictionary at server, templated with django -->
+ <div id="posts-main">
+ {% block body %}
+  {% for topic, value in post.items %}
+  <div id="post-container">
+   <div id="img-box">
+    <img id="img-link"src="{{ value.imgSrc }}"/>
+   </div> 
+   <div id="topic-caption-box">
+    <a id="topic" href="/{{value.url}}/">
+     <h2 id="topic">{{ topic }}</h2>
+    </a>
+    <div id="caption">
+     {{ value.caption}}
+    </div>
+   </div>
+  </div>
+  {% endfor %}
+ {% endblock %}
+ </div>
 <!-- background -->
 </div>
 
@@ -283,8 +289,23 @@ $(&#39;#Tesla&#39;).click(function() {openPhotoSwipe(this)});
      <div id="close"><span>Close(X)</span></div>
     </div>
     <iframe id="doc" src="https://docs.google.com/document/d/1Y-xCG3tn828p3V8cycUK_HrG92y6Y2PVD6KJQPUjn2E/pub?embedded=true"></iframe> </div>
+
+
+
 </body>
 
-
+<script id="title">
+ console.log('screenwidth',screen.width);
+ if (screen.width < 480) {
+  setTimeout(function(){
+   var c = document.getElementById("myCanvas");
+   var ctx = c.getContext("2d");
+   ctx.fillStyle = "black";
+   ctx.font="bold 100px Verdana";
+   ctx.fillText("Mike Jarvis Portfolio",5,100);
+  },6000);
+ }
+</script>
 <script src="/static/image.js"></script>
+<script src="/static/canvas.js"></script>
 </html>

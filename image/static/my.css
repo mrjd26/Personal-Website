@@ -1,3 +1,6 @@
+#title {
+ display:none;
+}
 #background {
  background-size:cover;
  height:1200px;
@@ -31,9 +34,6 @@ line-height:5px;
  font-family:sans-serif;
  font-weight:100px; 
 }
-.timeline::before{
- 
-}
 .timeline::after{
  background-color:#26B3F7;
  width:15px;
@@ -45,7 +45,6 @@ line-height:5px;
  margin-bottom:-10px;
  border-radius:50%; 
 }
-/* #26B3F7 */
 .flag::after{
  position:absolute;
  content: " ";
@@ -73,9 +72,7 @@ line-height:5px;
  margin-right:auto;
  display:inline-block;
  position:relative;
- 
  margin-top:20px;
- /*background-color:rgba(500,500,800,0.2);*/
  border-radius: 3px;
  visibility:hidden;
  font-family: sans-serif;
@@ -106,7 +103,6 @@ background: #222 url("/static/jquery-ui/images/ui-bg_highlight-soft_35_222222_1x
  border-radius:3px;
  padding: 6px 6px 6px 6px;
 }
-
 .sections:hover {
   opacity:1;
   border: 2px solid yellow;
@@ -116,14 +112,12 @@ background: #222 url("/static/jquery-ui/images/ui-bg_highlight-soft_35_222222_1x
  border: 2px solid white;
  max-width:150px;
 }
-
 body {
  height:1200px;
 }
 h1 {
  display:none;
  margin:0;
- 
 }
 #portfolio {
  color: #003147;
@@ -132,9 +126,6 @@ h1 {
  font-size:95px;
  font-weight:normal;
 }
-canvas {
-}
-
 #logo {
  float:right;
 }
@@ -143,7 +134,7 @@ canvas {
  display:block;
  margin-left:auto;
  margin-right:auto;
- background-color:rgb(0,3,6);
+/* background-color:rgb(0,3,6);*/
  background-color:rgba(0,0,0,0.5);
 }
 #accordion {
@@ -238,8 +229,8 @@ display:inline-block;
  margin-left:auto;
  margin-right:auto;
  text-align:left;
+ cursor:pointer;
 }
-
 #logo_box {
  height:150px;
  width:300px;
@@ -337,6 +328,41 @@ background-position: 0px 0px;
  -webkit-transform: rotate(4deg);
  transform: rotate(4deg);
 }
+#posts-main{
+ margin-top:40px;
+}
+#post-container{
+ margin:10px 10px 10px 10px;
+ width:1000px;
+ margin-left:auto;
+ margin-right:auto;
+ height:195px;
+ border-bottom:groove;
+ box-shadow: -1px -1px 5px #888888;
+}
+#topic{
+ text-decoration:none;
+ color:black;
+ margin:0 0 15px 0;
+}
+#topic:hover{
+ color:#0b93d5;
+}
+#img-box {
+ display:inline-block;
+ width:200px;
+ float:left;
+ height:175px;
+ margin:10px 0px 10px 10px;
+}
+#topic-caption-box{
+ height:175px;
+ float:right;
+ width:690px;
+ display:inline-block;
+ margin: 10px 50px 10px 50px;
+}
+
 
 /*********************************
 /* Phone device screen CSS
@@ -344,15 +370,28 @@ background-position: 0px 0px;
 ***********************************/
 
 @media screen and (max-device-width: 480px){
- #logo_box {
-  display:none;
+body {
+ width:100%;
+ height:100%;
+}
+.back_pane {
+ width: 100%;
+ margin:none;
+}
+#background {
+ width:100%;
+ height:auto;
+}
+#title {
+ display:visible;
+}
+ 
+#myCanvas{
+  width:100%;
+  height:100%;
  }
  #banner {
- height:400px;
- background: url('/static/website-banner.png') right bottom / 120% no-repeat;
- }
- .back_pane {
-
+ height:200px;
  }
  #myheading1,#myheading2,#myheading3,
  #myheading4,#myheading5,#myheading6{
@@ -360,9 +399,6 @@ background-position: 0px 0px;
 }
  #accordion{
   width:100%;
- }
- #myCanvas {
-  display:none;
  }
  h1 {
   display:inline-block;
@@ -478,26 +514,19 @@ background-position: 0px 0px;
   width:100%;
  }
  #footer {
-  height:300px;
- }
- #social {
-  margin-left:50%;
-  margin-top:10%;
+  height:200px;
  }
  .sprite {
   height:100px;
   width:100px;
   background:url("/static/sociocons.png") top left / 400% no-repeat;
+ margin-left:5%;
  }
  #in {
-  margin-top:20%;
-  margin-right:5%;
   background-position:-100px -98px;
  }
  #git {
   background-position:-300px -98px;
-  margin-top:30%;
-  margin-right:5%;
  }
  #fb {
   background-position:10px 0px;
@@ -505,6 +534,28 @@ background-position: 0px 0px;
  #about_box {
   width:100%
  }
+
+ #myheading6 {
+  display:none;
+}
+#codepen_pen {
+ display:none;
+}
+#resume-container {
+ text-align:center;
+ margin-top:50px;
+ float:left;
+ width:50%;
+}
+#links-container {
+ margin-top:50px;
+ float:right;
+ width:50%;
+}
+#resume {
+ float:none;
+ font-size:80px;
+}
  #about {
   display:none;
 }

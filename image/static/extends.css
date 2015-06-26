@@ -1,0 +1,29 @@
+.alley-math{
+ margin:10px 10px 10px 10px;
+ height:400px;
+ width:980px;
+ background-color:white;
+}
+.alley-math .img-box {
+ display:inline-block;
+ width:490px;
+ height:400px;
+ float:left;
+}
+.helper{
+ display:inline-block;
+ vertical-align:middle;
+ height:100%;
+}
+.img-box img{
+ vertical-align:middle;
+ }
+.alley-math .paragraph{
+ display:inline-block;
+ float:right;
+ width:490px;
+}
+.small-inlay{
+ float:right;
+ margin-top:-100px;
+}

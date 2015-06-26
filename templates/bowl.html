@@ -1,0 +1,40 @@
+{% extends "home.html" %}
+
+{% block jquery_accordion %}
+{% endblock %}
+
+{% block body %}
+ <div class="alley-math">
+  <div class="img-box">
+   <span class="helper"></span><img src="/static/parabola.png"/>
+  </div>
+  <div class="paragraph">
+   <h2>Parabola</h2>
+   <h4>Parabola-Vertex Form: x = a(y-k)² + h</h4>
+   <p>The points on either side of a parabola's axis mirror each other. Starting with a point where the ball is thrown (0,380) and randomly selecting a coordinate where the ball will strike, (in this case [390, 140]), a possible parabola can be created.  h,k are just different variables for x and y coordinates and denotes the vertex of the parabola, the point at the 'center' and 'bottom' of the "U"-shaped parabola.  This particular equation works in the bowling example because the parabola is turned 'sideways' like a 'C'.  After plugging in the variables and solving for a, as the ball travels down the alley ( y coordinate ), the x coordinate can be calculated.
+  </div>
+ </div>
+ <div class="alley-math">
+  <div class="img-box">
+   <span class="helper"></span><img src="/static/gutterball.png"/>
+  </div>
+  <div class="paragraph">
+   <h2>Slope</h2>
+   <h4>Slope-Intercept: y = mx + b</h4>
+   <p style="display-inline">By picking two points, where the gutter starts near the bottom of the html5 canvas and where the gutter end near the back of the bowling alley, slope intercept form is applied giving a linear slope and thus, an out-of-bounds area.  This same concept can be applied to a triangle of bowling pins to determine if the ball has collided with the pins. 'b' in the slope-intercept form is the point at which the slope intesects the y-axis.</p>  
+   <div class="small-inlay">
+    <img src="/static/pin_triangle.png"/>
+   </div>
+  </div>
+ </div>
+ <div class="alley-math">
+  <div class="img-box">
+    <span class="helper"></span><img src="/static/decel.png"/>
+  </div>
+  <div class="paragraph">
+   <h2>Deceleration</h2>
+  </div>
+ </div>
+
+{% endblock %}
+
